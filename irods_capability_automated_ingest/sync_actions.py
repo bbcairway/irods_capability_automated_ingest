@@ -152,6 +152,10 @@ def start_job(data):
         # set source
         src_abs = src_path
         main_task = s3_bucket_tasks.s3_bucket_main_task
+    elif data.get("reg_file"):
+        from .tasks import filelistsystem_tasks
+        src_abs = realpath(src_path)
+        main_task = filelistsystem_tasks.filelist_main_task
     else:
         src_abs = realpath(src_path)
         main_task = filesystem_tasks.filesystem_main_task
