@@ -172,6 +172,7 @@ def handle_start(args):
     check_event_handler(args.event_handler)
 
     data = {}
+    data["reg_file"] = args.reg_file
     data["restart_queue"] = args.restart_queue
     data["path_queue"] = args.path_queue
     data["file_queue"] = args.file_queue
@@ -389,6 +390,13 @@ def main():
         type=int,
         default=60,
         help="irods disconnect time in seconds",
+    )
+    parser_start.add_argument(
+        "--reg_file",
+        action="store",
+        type=str,
+        default=None,
+        help="Register files based on the provided mapping list (SourceFile, DestFile).",
     )
     add_arguments(parser_start)
 
