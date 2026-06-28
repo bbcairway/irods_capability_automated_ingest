@@ -11,6 +11,7 @@ app.conf.update(
     include=[
         "irods_capability_automated_ingest.tasks.delete_tasks",
         "irods_capability_automated_ingest.tasks.filesystem_tasks",
+        "irods_capability_automated_ingest.tasks.filelistsystem_tasks",
         "irods_capability_automated_ingest.tasks.s3_bucket_tasks",
     ]
 )
